@@ -43,6 +43,10 @@ function displayTask(){
         div.appendChild(ul)
     })
     const deleteBtn = document.querySelectorAll(".delete");
-    
+    for(i=0;i < deleteBtn.length;i++){
+        deleteBtn[i].addEventListener("click",()=>{
+            console.log("Are you sure you want to delete")
+        })
+    }
 
 };
