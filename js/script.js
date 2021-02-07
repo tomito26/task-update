@@ -43,6 +43,6 @@ function displayTask(){
         div.appendChild(ul)
     })
     const deleteBtn = document.querySelectorAll(".delete");
-    console.log(deleteBtn)
+    
 
 };
