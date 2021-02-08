@@ -5,6 +5,11 @@ function ToDoItems(item,isDone){
 }
 
 displayTask()
+let date = new Date().toDateString();
+let header = document.querySelector(".date");
+header.textContent = `${date}`;
+
+
 const form = document.getElementById("addTask");
 
 form.addEventListener("submit",(e)=>{
@@ -25,6 +30,7 @@ function addToLocalStorage(todoItems){
 };
 
 function removeItem(){
+    const task = getItemsFromLocalStorage()
 
 };
 function  getItemsFromLocalStorage(){
@@ -39,14 +45,18 @@ function displayTask(){
     tasks.map(task=>{
         const ul =  document.createElement("ul");
         ul.className="items"
-        ul.innerHTML = `<li><input type="checkbox"><span>${task.task}</span> <button class="delete"><i class="fas fa-trash-alt"></i></button></li>`;
+        ul.innerHTML = `<li><input type="checkbox" value="${task.task}"><span id="todo" value="${task.task}">${task.task}</span> <button class="delete"><i class="fas fa-trash-alt"></i></button></li>`;
         div.appendChild(ul)
     })
     const deleteBtn = document.querySelectorAll(".delete");
     for(i=0;i < deleteBtn.length;i++){
         deleteBtn[i].addEventListener("click",()=>{
-            console.log("Are you sure you want to delete")
+           console.log(task.task)
         })
     }
 
 };
+
+
+
+
